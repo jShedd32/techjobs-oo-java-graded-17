@@ -52,32 +52,32 @@ public class JobTest {
 
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
-        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        String jobString = "ID: " + job.getId() + "\n" +
+        Job jobOne = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String jobString = "ID: " + jobOne.getId() + "\n" +
                 "Name: Product tester\n" +
                 "Employer: ACME\n" +
                 "Location: Desert\n" +
                 "Position Type: Quality control\n" +
                 "Core Competency: Persistence";
-        Assert.assertEquals(jobString, job.toString().trim());
+        Assert.assertEquals(jobString, jobOne.toString().trim());
     }
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job job = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
-        String jobString = "ID: " + job.getId() + "\n" +
+        Job jobOne = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        String jobString = "ID: " + jobOne.getId() + "\n" +
                 "Name: Data not available\n" +
                 "Employer: Data not available\n" +
                 "Location: Data not available\n" +
                 "Position Type: Data not available\n" +
                 "Core Competency: Data not available";
-        Assert.assertEquals(jobString, job.toString().trim());
+        Assert.assertEquals(jobString, jobOne.toString().trim());
     }
 
     @Test
     public void testToStringHandlesOnlyId() {
-        Job job = new Job();
-        Assert.assertEquals("OOPS! This job does not seem to exist.", job.toString());
+        Job jobOne = new Job();
+        Assert.assertEquals("OOPS! This job does not seem to exist.", jobOne.toString());
     }
 
 
